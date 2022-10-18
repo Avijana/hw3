@@ -68,7 +68,20 @@ void dealloc(Node* head)
 // -----------------------------------------------
 
 
-
+struct s
+{
+	bool operator()(int x)
+	{
+		if(x%2==1)
+		{
+			return true;
+		}
+		else{
+			return false;
+		}
+		//return x%2 == 1;
+	}
+};
 
 
 int main(int argc, char* argv[])
@@ -87,9 +100,16 @@ int main(int argc, char* argv[])
 
     // Test out your linked list code
 
+	Node *smaller;
+	Node *larger;
+	int pivot = 8;
+	llpivot(head, smaller, larger, pivot);
 
+	print(smaller);
+	print(larger);
+	print(llfilter(larger, s()));
 
-    
-    return 0;
+	return 0;
+  return 0;
 
 }
