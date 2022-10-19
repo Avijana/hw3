@@ -91,8 +91,9 @@ Node* llfilter(Node* head, Comp pred) //HAVE TO DEALLOCATE ORIGINAL LL
 		if(pred(head->val)) 
 		{
 			//head = head->next;
-			return llfilter(head->next, pred);
-			
+			Node *temp = head->next; 
+			delete head;
+			return llfilter(temp, pred);
 		}
 		else
 		{

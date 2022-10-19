@@ -99,7 +99,7 @@ int main(int argc, char* argv[])
     print(head);
 
     // Test out your linked list code
-
+    /*
 	Node *smaller;
 	Node *larger;
 	int pivot = 8;
@@ -107,7 +107,31 @@ int main(int argc, char* argv[])
 
 	print(smaller);
 	print(larger);
-	print(llfilter(larger, s()));
+    Node* temp;
+    while(smaller != NULL) {
+        temp = smaller->next;
+        delete smaller;
+        smaller = temp;
+    }
+    while(larger != NULL) {
+        temp = larger->next;
+        delete smaller;
+        larger = temp;
+    }
+    delete head;
+    */
+
+	Node* n = llfilter(head, s());
+    print(n);
+    
+    Node* temp;
+    while(n != NULL) {
+        temp = n->next;
+        delete n;
+        n = temp;
+    }
+    
+    
 
 	return 0;
   return 0;
